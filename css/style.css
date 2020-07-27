@@ -1,0 +1,425 @@
+/* Variables */
+:root {
+  --primary-color: #fb4c47;
+  --text-color: #035755;
+  --secondary-color: #ffe1e1;
+  --fw: 750;
+}
+/****************
+    Resetting 
+******************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(rgba(255, 191, 190, 0.3), white) no-repeat;
+  background-size: 100vw 100vh;
+  color: var(--text-color);
+}
+h1{
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+a {
+  text-decoration: none;
+  font-family: "Prompt", sans-serif;
+  font-weight: var(--fw);
+  letter-spacing: 1px;
+  color: var(--text-color);
+}
+li {
+  list-style: none;
+}
+p {
+  font-size: 12px;
+  text-transform: capitalize;
+  line-height: 25px;
+  word-spacing: 2px;
+}
+.image-area img {
+  width: 100%;
+  height: 100%;
+}
+i{
+  cursor: pointer;
+}
+
+/**********************
+     Utility-Section 
+ *********************/
+
+.py-05 {padding: 5px 0;}
+.py-1 {padding: 10px 0;}
+.px-1 {padding: 0 10px ;}
+.py-2 {padding: 20px 0;}/*not used*/
+.px-2 {padding: 0 20px;}
+.py-3 {padding: 30px 0;}
+.pyd-3{padding-bottom: 30px;}
+.pyd-6{padding-bottom: 20px ;}/*not-used*/
+.p-05{padding: 5px;}
+.p-1 {padding: 10px;}
+.p-2 {padding: 20px;}
+.p-3 {padding: 30px;}/*not used*/
+
+.container {
+  max-width: 80%;
+  margin: auto;
+}
+.btn {
+  border-radius: 50px;
+  padding: 0.8rem 1.7rem;
+  border: none;
+  font-weight: var(--fw);
+  cursor: pointer;
+}
+.dark-bg {
+  background: var(--primary-color);
+  color: #fff;
+}
+.light-bg {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+.red-text {
+  color: var(--primary-color);
+  display: block;
+  font-size: 1.2rem;
+}
+.content {
+  font-family: "Red Hat Display", sans-serif;
+  padding: 15px;
+}
+.content .red-text {
+  margin-bottom: 10px;
+}
+
+.content p {
+  margin-bottom: 30px;
+}
+ .logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  transform: scale(0.8);
+  margin-right: 5px;
+}
+.logo a {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 14px;
+}
+.navigations {
+  display: flex;
+  align-items: center;
+}
+.navigations a {
+  margin-right: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 13px;
+}
+.navigations a:hover, 
+.navigations .current {
+  color: var(--primary-color);
+}
+/****************
+    Nav-Section 
+*****************/
+#main-nav .container {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#main-nav .navigations a{
+  position: relative;
+}
+#main-nav .navigations .drop:before,
+#main-nav .navigations .drop:after {
+  content: "";
+  display: block;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--primary-color);
+  transition: all 0.2s ease;
+}
+#main-nav .navigations .drop:before {
+  height: 2px;
+  width: 0px; /*some issues are there*/
+  top: 100%;
+}
+#main-nav .navigations a:hover .drop:before {
+  width: 10px;
+}
+#main-nav .navigations a:hover .drop:after,
+#main-nav .navigations .current .drop:after {
+  top: 115%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+#main-nav .navigations .contact {
+  padding: 0.6rem 1.7rem;
+  border: 2px solid var(--primary-color);
+  margin-right: 0;
+}
+/************************
+     Showcase-Section 
+*************************/
+#showcase {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+#showcase .container {
+  display: flex;
+  max-width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+/****************
+    Intro-Section
+******************/
+#intro {
+  position: relative;
+}
+#intro .bg-image {
+  position: absolute;
+  background: url('../img/covid-intro-bg.png') no-repeat center center;
+  width: 220px;
+  height: 470px;
+  transform: scale(0.5);
+  bottom: -121px;
+  right: -55px;
+  z-index: -2;
+}
+#intro .container {
+  display: flex;
+  align-items: center;
+  margin: initial;
+  max-width: 90vw;
+}
+#intro .image-area {
+  min-width: 50vw;
+  height: 70vh;
+}
+#intro .content {
+  padding-left: 40px;
+}
+#intro .image-area img {
+  transform: scale(1.2);
+}
+/***********************
+    Contagion-Section
+ **********************/
+#contagion .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#contagion .box {
+  text-align: center;  
+  margin: 30px 15px;
+  box-shadow: 0 0 30px -2px rgba(229, 229, 229, 1);
+  height: 350px;
+  background: #fff;
+  width: 280px;
+  border-radius: 3px;
+  position: relative;
+}
+#contagion .box .image-area {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+#contagion .cards .box:hover {
+  border-bottom:3px solid var(--primary-color);
+}
+#contagion .cards .box .faded-covid-logo {
+  position: absolute;
+  background: url("../img/covidFaded-icon-small.svg") no-repeat;
+  right: 80%;
+  top: 50%;
+  width: 160px;
+  height: 160px;
+  z-index: -12;
+}
+#contagion .content,
+#symptoms .content,
+#precautions .content {
+  text-align: center;
+}
+
+/**********************
+    Symptoms-Section
+***********************/
+#symptoms .image-area{
+  width: 100%;
+  margin: auto;
+  height: 80vh;
+}
+/*************************
+    Precautions-Sections
+**************************/
+#precautions{
+  position: relative;
+  overflow: hidden;
+}
+#precautions:after{
+content: '';
+display: block;
+position: absolute;
+background: url('../img/precautions-bg.svg') no-repeat ;
+background-size: 100% 100%;
+width: 100%;
+height: 80%;
+bottom: 5%;
+z-index: -10;
+}
+#precautions .precaution{
+  align-items:center;
+}
+#precautions .precaution .details,
+#precautions .precaution{
+  display: flex;
+  justify-content: center;
+}
+ #precautions .cover-box :nth-child(odd) .image-area{
+    order:2  ;
+}
+#precautions .details .light-bg{
+  height: 40px;
+  width: 40px;
+  padding: 9px;
+  font-size: 1.2rem;
+  border-radius:50% ;
+  font-weight: 1000;
+  margin-right:20px ;
+}
+#precautions .details .text{
+  max-width: 400px;
+  margin: auto;
+}
+#precautions  .image-area{
+  height: 400px;
+  width: 400px;
+}
+#precautions .image-area img{
+  transform: scale(0.9);
+}
+/*****************
+    Map-Section
+******************/
+#map .container,
+
+#map .image-area .icons .locate,
+#map .effected-details h1,
+#map .effected-details li,
+#map .effected-details li span{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+#map .container{
+  justify-content: center;
+  max-width: 70%;
+}
+#map .image-area{
+  max-width: 600px;
+  height: 370px;
+  z-index: -12;
+  margin-right: 30px;
+  position: relative;
+}
+#map .icons .locate{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  flex-direction: column;
+}
+#map .icons .search{
+  position: absolute;
+  top: 20px;
+  left: 90%;
+}
+#map .icons span{
+  background: white;
+   box-shadow: 0 0 30px -2px rgba(229, 229, 229, 1);
+   border-radius: 2px;
+}
+#map .effected-details{
+  width: 320px;
+  background: #fff;
+  box-shadow: 0 0 30px -2px rgba(229, 229, 229, 1);
+}
+#map .effected-details li .country img{
+  transform: scale(0.5);
+}
+#map .effected-details h1 span{
+  box-shadow: 0 0 30px -2px rgba(229, 229, 229, 1);
+  padding-top: 5px;
+}
+
+/************************
+    Subscribe-Section
+************************/
+#subscribe{
+  position: relative;
+}
+#subscribe .subscribe-bg{
+  position: absolute;
+  /* background: url('../img/subscribe-bg.svg') ; */
+  width: 100px;
+  height: 100px;
+  bottom: 100px;
+  right:90px;
+  transform: scale(0.5);
+}
+#subscribe .container h1{
+  text-align: center;
+  line-height: 2.5rem;
+  font-size: 2rem;
+}
+#subscribe .input-field{
+  box-shadow: 0 0 30px -2px rgba(229, 229, 229, 1);
+  max-width: 400px;
+  margin:30px  auto;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+#subscribe .input-field .btn{
+  padding: 0.8rem 2.2rem;
+  font-weight: 500;
+}
+#subscribe .input-field input,
+#subscribe .input-field input:focus{
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-family: "Prompt", sans-serif;
+}
+/**************
+    Footer
+***************/
+#main-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#main-footer .container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between ;
+  align-items: center;
+}
